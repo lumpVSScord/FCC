@@ -1,3 +1,12 @@
+<style id="fcc-preload-visibility">
+  /* 最初のレンダリング時に生コードが見えないよう即時で非表示にする */
+  .fcc-hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+</style>
+
+<div id="fcc-page-root" class="fcc-hidden">
 <!-- 【セクション】【ＰＣ】目次メニュー -->
 <header id="fcc-Menu">
   <nav class="fcc-nav">
@@ -911,6 +920,20 @@ TEL　047-407-1002　FAX　047-407-1002
 
 
 <style>
+
+/* =========================== */
+/* ▼ ロード時のチラつき防止 */
+/* =========================== */
+.fcc-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.fcc-visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
 
 /* ===== 画面横スクロールの余白の出現予防 ===== */
 html, body {
@@ -2775,6 +2798,16 @@ body {
 <!-- ここより下が【ＰＣ表示用】のｊａｖａコード --><!-- ここより下が【ＰＣ表示用】のｊａｖａコード --><!-- ここより下が【ＰＣ表示用】のｊａｖａコード --><!-- ここより下が【ＰＣ表示用】のｊａｖａコード -->
 <!-- ここより下が【ＰＣ表示用】のｊａｖａコード --><!-- ここより下が【ＰＣ表示用】のｊａｖａコード --><!-- ここより下が【ＰＣ表示用】のｊａｖａコード --><!-- ここより下が【ＰＣ表示用】のｊａｖａコード -->
 
+<script>
+// 初期表示で生コードが見えないように、DOM構築後にのみコンテンツを表示
+document.addEventListener("DOMContentLoaded", function() {
+  const root = document.getElementById("fcc-page-root");
+  if (root) {
+    root.classList.remove("fcc-hidden");
+    root.classList.add("fcc-visible");
+  }
+});
+</script>
 
 <!-- 【スクリプト】ファーストビュー -->
 <script>
