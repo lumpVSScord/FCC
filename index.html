@@ -1,3 +1,14 @@
+<style id="fcc-preload-html">
+  /* ページ全体を即時非表示にして生コードを見せない */
+  html, body {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    background: #fff !important;
+    overflow: hidden !important;
+    transition: opacity 0.25s ease; /* モバイル環境でもふわっと表示させる */
+  }
+</style>
+
 <style id="fcc-preload-visibility">
   /* 最初のレンダリング時に生コードが見えないよう即時で非表示にする */
   .fcc-hidden {
@@ -6,7 +17,20 @@
   }
 </style>
 
-<div id="fcc-page-root" class="fcc-hidden">
+<style id="fcc-preload-style">
+  /* 最速で中身を隠すためのプレロードスタイル */
+  #fcc-page-root {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  body {
+    background: #fff;
+  }
+</style>
+
+<div id="fcc-page-root" class="fcc-hidden" style="display: none;">
+
 <!-- 【セクション】【ＰＣ】目次メニュー -->
 <header id="fcc-Menu">
   <nav class="fcc-nav">
@@ -2800,13 +2824,42 @@ body {
 
 <script>
 // 初期表示で生コードが見えないように、DOM構築後にのみコンテンツを表示
-document.addEventListener("DOMContentLoaded", function() {
-  const root = document.getElementById("fcc-page-root");
-  if (root) {
-    root.classList.remove("fcc-hidden");
-    root.classList.add("fcc-visible");
+(function() {
+  let revealed = false;
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+
+    const root = document.getElementById("fcc-page-root");
+    const preloadStyle = document.getElementById("fcc-preload-style");
+    const preloadHtmlStyle = document.getElementById("fcc-preload-html");
+
+    if (root) {
+      root.style.removeProperty("display");
+      root.classList.remove("fcc-hidden");
+      root.classList.add("fcc-visible");
+    }
+
+    if (preloadStyle) {
+      preloadStyle.remove();
+    }
+
+    if (preloadHtmlStyle) {
+      preloadHtmlStyle.remove();
+    }
+
+    document.documentElement.style.removeProperty("visibility");
+    document.body.style.removeProperty("visibility");
+    document.documentElement.style.removeProperty("opacity");
+    document.body.style.removeProperty("opacity");
+    document.documentElement.style.removeProperty("overflow");
+    document.body.style.removeProperty("overflow");
   }
-});
+
+  document.addEventListener("DOMContentLoaded", reveal);
+  window.addEventListener("load", reveal);
+})();
 </script>
 
 <!-- 【スクリプト】ファーストビュー -->
@@ -5709,6 +5762,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-
+</div>
 
 
