@@ -4005,11 +4005,30 @@ TEL　047-407-1002　FAX　047-407-1002
   }
 
   .fcc-mobile-menu-icon span {
+    width: 100%;
     display: block;
     height: 3px;
     background-color: #6f5436; /* メニューテキストと同じ色 */
     border-radius: 2px;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+
+  /* 中央ラインは即座に消えるように遷移なし */
+  .fcc-mobile-menu-icon span:nth-child(2) {
+    transition: opacity 0s ease;
+  }
+
+  .fcc-mobile-menu-icon.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .fcc-mobile-menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .fcc-mobile-menu-icon.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
   }
 }
 
@@ -5560,14 +5579,19 @@ TEL　047-407-1002　FAX　047-407-1002
 
 <!-- ハンバーガーアイコン目次メニュー -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const mobileMenuIcon = document.getElementById("mobileMenuIcon");
-  const mobileNav = document.getElementById("mobileNav");
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuIcon = document.getElementById("mobileMenuIcon");
+    const mobileNav = document.getElementById("mobileNav");
 
-  // 上下スクロールでアイコン表示/非表示
-  let lastScrollTop = 0;
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const toggleMobileMenu = (shouldOpen) => {
+      mobileNav.classList.toggle("open", shouldOpen);
+      mobileMenuIcon.classList.toggle("open", shouldOpen);
+    };
+
+    // 上下スクロールでアイコン表示/非表示
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
     // メニューが開いている場合はスクロールでアイコン非表示しない
     if (!mobileNav.classList.contains("open")) {
@@ -5583,21 +5607,22 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
 
-  // メニュー開閉
-  mobileMenuIcon.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mobileNav.classList.toggle("open");
-  });
+    // メニュー開閉
+    mobileMenuIcon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const willOpen = !mobileNav.classList.contains("open");
+      toggleMobileMenu(willOpen);
+    });
 
-  // メニュー外をタップで閉じる
-  document.addEventListener("click", (e) => {
-    if (!mobileNav.contains(e.target) && !mobileMenuIcon.contains(e.target)) {
-      mobileNav.classList.remove("open");
-    }
-  });
+    // メニュー外をタップで閉じる
+    document.addEventListener("click", (e) => {
+      if (!mobileNav.contains(e.target) && !mobileMenuIcon.contains(e.target)) {
+        toggleMobileMenu(false);
+      }
+    });
 
-  // メニュー内リンクをクリックで閉じる + 一瞬でジャンプ
-  mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
+    // メニュー内リンクをクリックで閉じる + 一瞬でジャンプ
+    mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const targetId = link.getAttribute("href");
@@ -5609,7 +5634,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
       // メニューを閉じる
-      mobileNav.classList.remove("open");
+      toggleMobileMenu(false);
     });
   });
 });
