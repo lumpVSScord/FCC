@@ -60,7 +60,7 @@
 <!-- 【セクション】【ＰＣ】ＦＣＣヘッダー -->
 <div class="pc-fcc-image-header-section-wrapper">
   <div class="pc-fcc-image-header-image">
-    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/Beige-and-White-Clean-Minimalist-Birthday-Video-1366-x-768-px.png" alt="画像1">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/FCCLPFV.png" alt="画像1">
   </div>
 
   <div class="pc-fcc-image-header-texts">
@@ -1065,7 +1065,7 @@ body {
 .pc-fcc-image-header-section-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;        /* 画面全体の高さ */
+  height: 50vh;         /* 縦幅を半分にして見やすく */
   overflow: hidden;     /* はみ出した部分を非表示 */
 }
 
@@ -1314,7 +1314,7 @@ body {
 /* =========================== */
 .pc-fcc-first-view-wrapper {
   width: 100%;
-  background-color: #fff;
+  background-color: #e0c0bf;
   box-sizing: border-box;
   text-align: center;
   padding: 40px 20px;
@@ -3252,7 +3252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- 【セクション】【MB】ＦＣＣヘッダー -->
 <div class="mb-fcc-image-header-section-wrapper">
   <div class="mb-fcc-image-header-image">
-    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/Beige-and-White-Clean-Minimalist-Birthday-Video-1366-x-768-px.png" alt="画像1">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/FCCLPFV.png" alt="画像1">
   </div>
 
   <div class="mb-fcc-image-header-texts">
@@ -4083,10 +4083,6 @@ TEL　047-407-1002　FAX　047-407-1002
     margin: 0;
   }
 
-  .fcc-mobile-nav li {
-    margin: 20px 0;
-  }
-
   .fcc-mobile-nav a {
     color: #6f5436;
     text-decoration: none;
@@ -4094,8 +4090,17 @@ TEL　047-407-1002　FAX　047-407-1002
     font-weight: bold;
     display: block;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(111,84,54,0.2);
+    border-bottom: 2px solid rgba(111,84,54,0.2);
     transition: color 0.2s ease;
+  }
+
+  /* リストごとにピンクとブルーの下線を交互に設定 */
+  .fcc-mobile-nav li:nth-child(odd) a {
+    border-bottom-color: rgba(255, 182, 193, 0.85);
+  }
+
+  .fcc-mobile-nav li:nth-child(even) a {
+    border-bottom-color: rgba(173, 216, 230, 0.85);
   }
 
   .fcc-mobile-nav a:hover {
@@ -4112,8 +4117,6 @@ TEL　047-407-1002　FAX　047-407-1002
     z-index: -1;
   }
 }
-
-
 
 /* ===== 【セクション】【モバイル】ＦＣＣヘッダー ===== */
 
