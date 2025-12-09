@@ -29,7 +29,14 @@
   }
 </style>
 
+
+
+
 <div id="fcc-page-root" class="fcc-hidden" style="display: none;">
+
+
+
+
 
 <!-- 【セクション】【ＰＣ】目次メニュー -->
 <header id="fcc-Menu">
@@ -53,7 +60,7 @@
 <!-- 【セクション】【ＰＣ】ＦＣＣヘッダー -->
 <div class="pc-fcc-image-header-section-wrapper">
   <div class="pc-fcc-image-header-image">
-    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test9.jpg" alt="画像1">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/Beige-and-White-Clean-Minimalist-Birthday-Video-1366-x-768-px.png" alt="画像1">
   </div>
 
   <div class="pc-fcc-image-header-texts">
@@ -84,7 +91,6 @@
       そして、楽しんでもらって終わりではなく、その後の会話やご案内にもつなげていきたい。<br>
       そんなご担当者さまに向けて設計した、参加型で“映える”体験コンテンツをご提供します。<br><br>
   </p>
-
 
   <!-- ▼ 2つのボタン -->
   <div class="pc-fcc-first-view-btn-wrapper">
@@ -409,7 +415,7 @@ TEL 047-407-1002 FAX 047-407-1002
 <br>
 
   <h3 class="pc-case-studies-introduction">
-       活用シーンをご紹介
+       ご活用シーンをご紹介
   </h3>
 
   <!-- 導入実績画像エリア -->
@@ -930,7 +936,7 @@ TEL　047-407-1002　FAX　047-407-1002
 </div>
 
 
-
+</div>
 
 
 
@@ -974,6 +980,35 @@ body {
 
 body {
   overscroll-behavior-y: contain; /* iOSでの慣性をやや抑制 */
+}
+
+
+
+
+/* ===== 【スマホ表示で非表示】ＦＣＣヘッダー ===== */
+@media screen and (max-width: 768px) {
+  .pc-fcc-image-header-image {
+    height: 300px; /* スマホ用に縦幅を縮小 */
+  }
+
+.pc-fcc-image-header-section-title {
+    font-size: 40px;
+    padding: 90px 0 0 0;
+  }
+
+ .pc-fcc-image-header-section-subtitle {
+    font-size: 20px;
+    padding: 10px 0 0 0;
+  }
+
+.pc-fcc-image-header-description {
+    font-size: 16px;
+    padding: 10px 0 0 0;
+  }
+
+ .pc-fcc-image-header-texts {
+    top: 40%; /* 少し上にずらす場合 */
+  }
 }
 
 
@@ -1059,6 +1094,23 @@ body {
   width: 90%;                     /* 親幅の90%以内で表示 */
   color: #000;
   z-index: 2;                      /* 画像より上に表示 */
+  isolation: isolate;              /* 疑似要素を重ねた際に背面へ抜けないようにする */
+}
+
+/* ▼ タイトル背景のふわふわフィルター */
+.pc-fcc-image-header-texts::before {
+  content: "";
+  position: absolute;
+  inset: -12px -22px;
+  background:
+    radial-gradient(105% 85% at 28% 42%, rgba(255, 182, 193, 0.7) 0%, rgba(255, 182, 193, 0.4) 50%, rgba(255, 182, 193, 0) 82%),
+    radial-gradient(125% 95% at 70% 50%, rgba(173, 216, 230, 0.95) 0%, rgba(173, 216, 230, 0.65) 60%, rgba(173, 216, 230, 0) 90%),
+    radial-gradient(120% 95% at 50% 60%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 88%);
+  filter: blur(10px);
+  border-radius: 999px;
+  transform: translateY(-14px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* ▼ メインタイトル */
@@ -2862,6 +2914,10 @@ body {
 })();
 </script>
 
+
+
+
+
 <!-- 【スクリプト】ファーストビュー -->
 <script>
 // ===========================
@@ -3182,7 +3238,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <li><a href="#mb-section001">ＦＣＣについて</a></li>
     <li><a href="#mb-section002">わたあめイベントとは？</a></li>
     <li><a href="#mb-section003">選ばれる３つの理由</a></li>
-    <li><a href="#mb-section004">導入実績</a></li>
+    <li><a href="#mb-section004">ご活用例</a></li>
     <li><a href="#mb-section005">イベントの流れ</a></li>
     <li><a href="#mb-section006">安全性について</a></li>
     <li><a href="#mb-section007">ＦＡＱ</a></li>
@@ -3196,7 +3252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- 【セクション】【MB】ＦＣＣヘッダー -->
 <div class="mb-fcc-image-header-section-wrapper">
   <div class="mb-fcc-image-header-image">
-    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test9.jpg" alt="画像1">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/Beige-and-White-Clean-Minimalist-Birthday-Video-1366-x-768-px.png" alt="画像1">
   </div>
 
   <div class="mb-fcc-image-header-texts">
@@ -3215,7 +3271,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <!-- =========================== -->
-<!-- 【モバイル】ファーストビュー -->
+<!-- 【セクション】【MB】ファーストビュー -->
 <!-- =========================== -->
 <div id="section000" class="mb-fcc-first-view-wrapper">
   <p class="mb-fcc-first-view-title"><br>
@@ -3225,7 +3281,22 @@ document.addEventListener("DOMContentLoaded", function() {
       そして、楽しんでもらって終わりではなく、その後の会話やご案内にもつなげていきたい。<br><br>
       そんなご担当者さまに向けて設計した、参加型で“映える”体験コンテンツをご提供します。<br><br><br>
   </p>
+
+
+<!-- 【セクション】【MB】コンタクトボタン -->
+<div class="mb-contact-btns">
+  <a class="mb-contact-btn btn-blue mb-open-booking">
+    <span>お問い合わせ</span>
+  </a>
+  <a class="mb-contact-btn btn-pink mb-open-document">
+    <span>資料請求</span>
+  </a>
+
+<br>
+
 </div>
+</div>
+
 
 
 
@@ -3340,71 +3411,167 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-<!-- 【セクション】【MB】導入実績 -->
-<div id="mb-section004" class="mb-case-studies-section-wrapper">
 
+<!-- 【セクション】【MB】ご活用例 -->
+<div id="mb-section4" class="mb-case-studies-section-wrapper">
   <h2 class="mb-case-studies-section-title">
-      導入実績
+      こんなシーンで<br>ご活用いただけます
   </h2>
 
   <p class="mb-case-studies-section-description">
-    さまざまなイベントに合わせて導入可能！<br>
-    来場促進・滞在時間アップなど、<br>目的に合わせた演出が可能です。
+     わたあめイベントは、<br>ファミリーでのご来場が多い<br>さまざまな場面でご利用いただけます。<br><br>
+     「ファミリー向けに、もう一つ目玉となる体験コンテンツが欲しい」という場面で、<br>柔軟に組み込んでいただけます。
   </p>
 
   <h3 class="mb-case-studies-introduction">
-       FCCと過去のイベント比較
+       ご活用シーンをご紹介
   </h3>
 
   <!-- 導入実績画像エリア -->
   <div class="mb-case-studies-image-wrapper">
 
-    <!-- 施設A -->
-    <div class="mb-case-studies-row">
-      <p class="mb-case-studies-facility-name">Ａ</p>
-      <div class="mb-case-studies-images">
+    <h3 class="mb-case-studies-image-title">
+      【カーディーラー】
+    </h3>
 
-        <div class="mb-case-studies-image-box">
-          <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test17.png" alt="施設Aビフォー">
-          <p class="mb-case-studies-text">2日間　キャッチ数　91組</p>
-          <p class="mb-case-studies-text">単日あたり　45.5組</p>
-        </div>
+    <p class="mb-case-studies-image-description">
+       展示車の近くにわたあめ体験ブースを設置し、ご家族で楽しみながら、自然な会話やご案内につながる場として。
+    </p>
 
-        <img class="mb-case-studies-arrow" src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/right-arrow.png" alt="矢印">
+    <h3 class="mb-case-studies-image-title">
+      【住宅展示場・モデルハウス】
+    </h3>
 
-        <div class="mb-case-studies-image-box">
-          <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test21.png" alt="施設Aアフター">
-          <p class="mb-case-studies-text">3日間　キャッチ数　309組</p>
-          <p class="mb-case-studies-text" style="color: #e62f8b;">単日あたり　103組</p>
-        </div>
+    <p class="mb-case-studies-image-description">
+       モデルハウス見学や相談の合間に、お子さまが楽しめるコンテンツとして、ご家族全体がリラックスして過ごせる時間づくりに役立ちます。
+    </p>
 
-      </div>
-    </div>
+    <h3 class="mb-case-studies-image-title">
+      【ショッピングモール・商業施設】
+    </h3>
 
-    <!-- 施設B -->
-    <div class="mb-case-studies-row">
-      <p class="mb-case-studies-facility-name">Ｂ</p>
-      <div class="mb-case-studies-images">
-
-        <div class="mb-case-studies-image-box">
-          <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test19.png" alt="施設Bビフォー">
-          <p class="mb-case-studies-text">3日間　キャッチ数　42組</p>
-          <p class="mb-case-studies-text">単日あたり　14組</p>
-        </div>
-
-        <img class="mb-case-studies-arrow" src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/right-arrow.png" alt="矢印">
-
-        <div class="mb-case-studies-image-box">
-          <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test22.png" alt="施設Bアフター">
-          <p class="mb-case-studies-text">3日間　キャッチ数　351組</p>
-          <p class="mb-case-studies-text" style="color: #e62f8b;">単日あたり　117組</p>
-        </div>
-
-      </div>
-    </div>
+    <p class="mb-case-studies-image-description">
+       週末のキャンペーンやフェスティバルの一コンテンツとして、館内ににぎわいとフォトスポットを生む集客コンテンツとして。
+    </p>
 
   </div>
 </div>
+
+
+
+
+<!-- 【セクション】【MB】インタビュー（アコーディオン） -->
+<div class="mb-accordion-container">
+
+  <h2 class="mb-accordion-title">導入企業インタビュー</h2>
+
+  <p class="mb-accordion-description">
+    フェアリーコットンキャンディーをご利用いただいた企業様の声を紹介しています。
+  </p>
+
+  <button class="mb-accordion-btn" id="mb-interview-toggle">
+    インタビューを見る
+  </button>
+
+  <div class="mb-accordion-content" id="mb-interview-content">
+
+    <h3 class="mb-expansion-title">トヨタユナイテッド奈良株式会社</h3>
+
+    <div class="mb-interview-text">
+      <p class="mb-expansion-description">
+        奈良県のイオンモール内で開催された、トヨタユナイテッド奈良様のオリジナルイベント「チャウピーフェスティバル」にて、FCCのわたあめ作り体験イベントをご活用いただきました。店舗前の大型催事場に展示車を並べ、そのすぐ横にわたあめブースを設置。マスコットキャラクター「チャウピー」をモチーフにしたキャラクターわたあめを提供し、たくさんのご家族に“自分だけのチャウピーわたあめ作り”を楽しんでいただきました。
+      </p>
+    </div>
+
+    <div class="mb-interview-text">
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/導入企業写真ver.2.png"
+           alt="インタビューイメージ"
+           class="mb-accordion-image1">
+    </div>
+
+    <div class="mb-company-introduction mb-interview-text">
+      <h4 class="mb-company-introduction-title">ご担当者様より</h4>
+      <p class="mb-company-introduction-description">
+        「集客もお客様満足度も高く、わたあめ自体が景品になるので現場としても扱いやすいイベントでした。自社キャラクターに合わせたカスタマイズにも対応していただき、スタッフからも『また実施したい』という声が上がっています。」
+      </p>
+      <hr class="mb-introduction-divider">
+    </div>
+
+<br>
+
+    <div class="mb-interview-text">
+      <h4>Q1. 今回、わたあめイベントを実施しようと思われた「目的」や、「実施に至ったきっかけ・背景」を教えてください。</h4>
+      <p>A1. スマホイベントで他店と差別化できる集客企画を探していたところ、KDDI様から「わたあめ体験」を提案いただき、面白そうだったと同時に奈良県では前例のない企画だった点に魅力を感じて採用しました。</p>
+
+<br>
+
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/6.png"
+           alt="インタビューイメージ"
+           class="mb-accordion-image4">
+
+<br>
+
+      <h4>Q2. これまでに実施されてきたイベントや集客施策には、どのようなものがありましたか？</h4>
+      <p>A2. これまではエア抽選機やガラガラ抽選を行っていましたが、どこでも実施されているため目新しさがなく、景品の準備も手間に感じていました。</p>
+
+<br>
+
+      <h4>Q3. 今回のイベントで想定されていた「ターゲット層」について教えてください。</h4>
+      <p>A3. 携帯キャリアの変更に心理的ハードルが低い、若いファミリー層（小学校低学年以下のお子様連れ）をメインターゲットとして想定していました。</p>
+
+<br>
+
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/7.png"
+           alt="インタビューイメージ"
+           class="mb-accordion-image5">
+
+<br>
+
+      <h4>Q4. 数あるイベント企画の中から、わたあめイベント＋チャウピーのコラボを選んでいただいた“決め手”や、魅力に感じられた点を教えてください。</h4>
+      <p>A4. 他では行われていない独自企画であることが最大の決め手です。会場自体が華やかで映えるスポットになり、当社マスコットキャラクターを自分で作れる体験が来場者に好評でした。また、会場設置を任せられるうえ、わたあめ自体が景品になるため、別途景品を用意する必要がない点もメリットです。</p>
+
+<br>
+
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/8.png"
+           alt="インタビューイメージ"
+           class="mb-accordion-image6">
+
+<br>
+
+      <h4>Q5. チャウピーの顔シールを使って「自分だけのチャウピー」を作る体験や、当日の参加者の反応で印象に残っている様子は？</h4>
+      <p>A5. わたあめで作ったチャウピーを、人形と一緒に撮影して帰られるご家族が多く、特に小さなお子様が完成したチャウピーを嬉しそうに見せてくれた姿が印象的でした。</p>
+
+<br>
+
+      <div class="mb-accordion-image-wrapper">
+        <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/4.png"
+             alt="インタビューイメージ"
+             class="mb-accordion-image2">
+        <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/5.png"
+             alt="インタビューイメージ"
+             class="mb-accordion-image3">
+      </div>
+
+<br>
+
+      <h4>Q6. 御社スタッフの皆さまからのご感想やお声は？</h4>
+      <p>A6. スタッフからは、「会場が華やかになり、声をかけやすい雰囲気になった」「チャウピーのわたあめをきっかけに自然と会話が生まれる」といったポジティブな声が多く上がっていました。来場されたお客様も予想よりかなり多く、特に狙っていた若いご家族層との接点づくりには大きく貢献してくれたと感じています。</p>
+
+<br>
+
+      <h4>Q7. 同じようにファミリー向けの販促イベントをご検討されている企業様へのメッセージは？</h4>
+      <p>A7. 2回の実施で細かな要望にも柔軟に対応いただき、当社マスコットキャラクターを再現した企画になりました。集客効果も非常に高く、お客様満足度も良い、手離れのよいおすすめのイベントです。</p>
+
+<br>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
 
 
 
@@ -3423,7 +3590,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="mb-fcc-event-item">
       <h3>01</h3>
       <p>什器や備品を展開して<br>会場を作り込む</p>
-      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test15.png" alt="イベントの流れ01">
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/現場設営.png" alt="イベントの流れ01">
     </div>
 
     <div class="mb-fcc-event-item">
@@ -3815,6 +3982,9 @@ TEL　047-407-1002　FAX　047-407-1002
 }
 
 
+
+
+
 /* ===== 【MB】モバイル用ハンバーガーアイコン ===== */
 @media screen and (max-width: 768px) {
   .fcc-mobile-menu-icon {
@@ -3925,34 +4095,6 @@ TEL　047-407-1002　FAX　047-407-1002
 }
 
 
-/* ===== 【スマホ表示で非表示】ＦＣＣヘッダー ===== */
-@media screen and (max-width: 768px) {
-  .pc-fcc-image-header-image {
-    height: 300px; /* スマホ用に縦幅を縮小 */
-  }
-
-.pc-fcc-image-header-section-title {
-    font-size: 40px;
-    padding: 90px 0 0 0;
-  }
-
- .pc-fcc-image-header-section-subtitle {
-    font-size: 20px;
-    padding: 10px 0 0 0;
-  }
-
-.pc-fcc-image-header-description {
-    font-size: 16px;
-    padding: 10px 0 0 0;
-  }
-
- .pc-fcc-image-header-texts {
-    top: 40%; /* 少し上にずらす場合 */
-  }
-}
-
-
-
 
 /* ===== 【セクション】【モバイル】ＦＣＣヘッダー ===== */
 
@@ -3982,7 +4124,7 @@ TEL　047-407-1002　FAX　047-407-1002
 /* ▼ テキストを画像の上に重ねる */
 .mb-fcc-image-header-texts {
   position: absolute;
-  bottom: 10%;                    /* モバイルでは下寄せの方が見やすい */
+  bottom: 5%;                    /* モバイルでは下寄せの方が見やすい */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -4016,179 +4158,26 @@ TEL　047-407-1002　FAX　047-407-1002
 }
 
 
-
-
+/* ▼ タイトル背景のふわふわフィルター */
+.mb-fcc-image-header-texts::before {
+  content: "";
+  position: absolute;
+  inset: -5px -22px;
+  background:
+    radial-gradient(105% 85% at 28% 42%, rgba(255, 182, 193, 0.3) 0%, rgba(255, 182, 193, 0.4) 50%, rgba(255, 182, 193, 0) 82%),
+    radial-gradient(125% 95% at 70% 50%, rgba(173, 216, 230, 0.5) 0%, rgba(173, 216, 230, 0.65) 60%, rgba(173, 216, 230, 0) 90%),
+    radial-gradient(120% 95% at 50% 60%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 88%);
+  filter: blur(10px);
+  border-radius: 999px;
+  transform: translateY(-30px);
+  z-index: -1;
+  pointer-events: none;
+}
 
 
 
 
 /* ===== 【MB】ファーストビュー ===== */
-/* =========================== */
-/* ▼ 【モバイル】共通モーダル */
-/* =========================== */
-.mb-modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.55);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.mb-modal-inner,
-.mb-booking-inner,
-.mb-privacy-inner {
-  background: #fff;
-  width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  border-radius: 18px;
-  position: relative;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  max-height: 90vh;
-  overflow-y: auto;
-  font-family: "ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
-  color: #404040;
-}
-
-/* 閉じるボタン */
-.mb-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-  transition: transform 0.2s ease;
-}
-
-.mb-modal-close:hover {
-  transform: rotate(90deg);
-}
-
-/* =========================== */
-/* ▼ モーダル内タイトル */
-/* =========================== */
-.mb-modal-title {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 16px;
-  color: #6f5436;
-}
-
-/* =========================== */
-/* ▼ 資料請求フォーム内の項目 */
-/* =========================== */
-#mb-document-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-#mb-document-form input,
-#mb-document-form select,
-#mb-document-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  box-sizing: border-box;
-}
-
-#mb-document-form textarea {
-  min-height: 90px;
-}
-
-/* =========================== */
-/* ▼ プライバシーチェック */
-/* =========================== */
-.mb-privacy-section {
-  margin-top: 18px;
-}
-
-.mb-privacy-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
-
-.mb-privacy-label input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-}
-
-.mb-privacy-link {
-  display: inline-block;
-  margin-top: 6px;
-  font-size: 13px;
-  color: #007bff;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.mb-privacy-link:hover {
-  opacity: 0.8;
-}
-
-/* =========================== */
-/* ▼ 送信ボタン */
-/* =========================== */
-.mb-submit-area {
-  text-align: center;
-  margin-top: 18px;
-}
-
-.mb-submit-disabled {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 25px;
-  border-radius: 6px;
-  cursor: not-allowed;
-  background: gray;
-  color: #fff;
-  border: none;
-}
-
-#mb-download-btn:enabled {
-  background: #007bff;
-  cursor: pointer;
-}
-
-/* =========================== */
-/* ▼ Bookings iframe（お問い合わせ） */
-/* =========================== */
-.mb-booking-iframe {
-  width: 100%;
-  height: 70vh;
-  border: none;
-  border-radius: 10px;
-}
-
-/* =========================== */
-/* ▼ プライバシーポリシーテキスト */
-/* =========================== */
-.mb-privacy-text {
-  font-size: 14px;
-  line-height: 1.6;
-  white-space: pre-wrap;
-}
-
-/* =========================== */
-/* ▼ 【モバイル】ファーストビュー */
-/* =========================== */
 .mb-fcc-first-view-wrapper {
   width: 100%;
   background: #fff;
@@ -4465,118 +4454,200 @@ TEL　047-407-1002　FAX　047-407-1002
 
 
 
-
-
-/* ===== 【セクション】【MB】導入実績 ===== */
-/* 導入実績の背景 */
+/* ===== 【MB】 ご活用例 ===== */
 .mb-case-studies-section-wrapper {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw; /* 背景を画面端まで */
-
+  width: 100%;
   background-color: #f5ecf4;
   box-sizing: border-box;
   text-align: center;
-  padding: 20px 10px;
-
-  overflow-x: hidden; /* 横スクロール防止 */
+  padding: 20px 12px;
 }
 
-
-/* タイトル */
 .mb-case-studies-section-title {
   font-weight: 900;
-  font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
   color: #6f5436;
-  font-size: 35px; /* モバイルに合わせて縮小 */
+  font-size: 24px;
   user-select: none;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
-/* 説明文 */
 .mb-case-studies-section-description {
   color: #6f5436;
   font-weight: bold;
-  font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  font-size: 14px; /* モバイル用に縮小 */
-  margin-top: 0 !important;
+  font-family: "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
+  font-size: 16px;
   line-height: 1.6;
-  text-align: center;
+  margin: 0 auto 24px;
 }
 
-/* サブタイトル */
 .mb-case-studies-introduction {
-  font-size: 18px; /* モバイル用に縮小 */
-  margin: 20px 0 15px 0;
+  font-size: 22px;
+  margin: 24px 0 16px 0;
   color: #67b5b7;
 }
 
-/* 画像行全体（親） */
-.mb-case-studies-row {
-  display: flex;
-  flex-direction: column; /* 縦並び */
-  align-items: center;
+.mb-case-studies-image-wrapper {
+  color: #6f5436;
+  font-family: "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
+  padding: 0 8px;
+}
+
+.mb-case-studies-image-title {
+  font-size: 18px;
+  margin: 16px 0 8px 0;
+  color: #6f5436;
+}
+
+.mb-case-studies-image-description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #6f5436;
+}
+
+
+
+
+/* ===== 【MB】 導入実績／インタビュー ===== */
+.mb-accordion-container {
+  padding: 20px 12px;
+  background-color: #ffffff;
+}
+
+.mb-accordion-title {
+  font-size: 24px;
+  margin: 24px 0 16px;
+  color: #67b5b7;
+  text-align: center;
+}
+
+.mb-accordion-description {
+  font-size: 14px;
+  color: #6f5436;
+  font-weight: bold;
+  font-family: "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-/* 施設名テキスト */
-.mb-case-studies-facility-name {
+.mb-accordion-btn {
+  width: 90%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 12px 16px;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #6f5436;
-  text-align: center; /* 中央揃え */
+  background: #de82a7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mb-accordion-btn:hover {
+  background: #d16f98;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.mb-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #f5ecf4;
+  border-radius: 6px;
+  margin-top: 8px;
+  padding: 0;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.mb-accordion-content.open {
+  padding: 12px;
+}
+
+.mb-expansion-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #404040;
+  margin: 16px 0 12px;
+  padding: 0;
+  text-align: left;
+}
+
+.mb-interview-text {
+  margin: 0 auto 24px;
+  text-align: left;
+  font-family: "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
+  line-height: 1.6;
+}
+
+.mb-expansion-description {
+  font-size: 15px;
+  color: #404040;
+  margin: 0 0 12px 0;
+}
+
+.mb-accordion-image1,
+.mb-accordion-image4,
+.mb-accordion-image5,
+.mb-accordion-image6 {
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 16px 0;
+  display: block;
 }
 
-/* 画像行全体 */
-.mb-case-studies-images {
-  display: flex;
-  flex-direction: column; /* 縦並び */
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* 画像と矢印の間隔 */
-  margin-bottom: 15px;
+.mb-accordion-image-wrapper {
+  display: block;
+  margin: 16px 0;
+}
+
+.mb-accordion-image2,
+.mb-accordion-image3 {
   width: 100%;
-}
-
-/* 左右画像ボックス */
-.mb-case-studies-image-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  width: 90%; /* 幅を調整 */
-  max-width: 300px;
-}
-
-/* 左右画像 */
-.mb-case-studies-image-box img {
-  width: 100%; /* 親に合わせる */
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
-/* 矢印画像 */
-.mb-case-studies-arrow {
-  width: 40px;
-  height: auto;
-  margin: 5px 0;
-  transform: rotate(90deg); /* 下向きに回転 */
+.mb-company-introduction {
+  margin: 16px auto;
 }
 
-/* 左右テキスト */
-.mb-case-studies-text {
-  font-size: 12px; /* モバイル用に縮小 */
-  margin: 2px 0;
-  color: #6f5436;
-  line-height: 1.4;
-  text-align: center;
+.mb-company-introduction-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #404040;
+  margin-bottom: 6px;
+}
+
+.mb-company-introduction-description {
+  font-size: 14px;
+  color: #444;
+  margin: 4px 0;
+}
+
+.mb-introduction-divider {
+  border: none;
+  border-bottom: 1px solid #404040;
+  margin-top: 8px;
+}
+
+.mb-interview-text h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #404040;
+  margin: 16px 0 8px 0;
+}
+
+.mb-interview-text p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #444;
 }
 
 
@@ -5546,7 +5617,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+<!-- インターンページアコーディオン展開 -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("mb-interview-toggle");
+  const content = document.getElementById("mb-interview-content");
 
+  const textOpen = "インタビューを見る";
+  const textClose = "閉じる";
+
+  btn.textContent = textOpen;
+
+  btn.addEventListener("click", function () {
+    if (content.classList.contains("open")) {
+      content.style.maxHeight = null;
+      content.classList.remove("open");
+      btn.textContent = textOpen;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.classList.add("open");
+      btn.textContent = textClose;
+    }
+  });
+});
+</script>
 
 
 
@@ -5762,6 +5856,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-</div>
 
+<script>
+// ▼ お問い合わせ（複製ボタン対応）
+document.querySelectorAll('.mb-open-booking').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('mb-booking-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
+});
 
+// ▼ 資料請求（複製ボタン対応）
+document.querySelectorAll('.mb-open-document').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('mb-document-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
+});
+</script>
