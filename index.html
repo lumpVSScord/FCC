@@ -292,40 +292,34 @@ TEL 047-407-1002 FAX 047-407-1002
       キャラクターわたあめ作成体験イベントとは？
   </h2>
 
-<br>
-<br>
-<br>
+  <br><br><br>
 
-  <p class="pc-character-wataame-section-description" style="font-size: 22px; font-weight: bold; line-height: 1.8;">
-オリジナルの世界観で装飾されたブースの中で、お子さまが自分の手でわたあめを作り、<br>キャラクター風にデコレーションして楽しめる、参加型の体験イベントです。<br>
-ふわふわのわたあめを作るワクワク感と、<br>顔シールなどで仕上げていく楽しさが合わさることで、親子で写真を撮りたくなるシーン
-<br><br>
-お子さまが「見て見て！」と出来上がりを見せてくれる瞬間
-<br><br>
-その様子をきっかけに生まれるスタッフとの会話
-<br>
-など、自然なコミュニケーションが生まれやすいのが特徴です。
-<br>
-カーディーラー・住宅展示場・保険代理店・ショッピングモールなど、<br>「ファミリーで来てほしい」「ゆっくり見て・話してほしい」場面でご活用いただきやすいコンテンツです。
+  <!-- ▼ 追加：画像＋テキストを横並びにするラッパー -->
+  <div class="pc-character-wataame-flex">
 
-  </p>
+    <!-- 画像（左） -->
+    <div class="pc-character-wataame-image-row">
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/10.png" alt="画像1">
+    </div>
 
-
-<!-- 【画像】【ＰＣ】キャラクターわたあめイベント -->
-<div class="pc-character-wataame-image-row">
-  <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/10.png" alt="画像1">
-</div>
+    <!-- テキスト（右） -->
+    <p class="pc-character-wataame-section-description" style="font-size: 18px; font-weight: bold; line-height: 1.8;">
+      オリジナルの世界観で装飾されたブースの中で、お子さまが自分の手でわたあめを作り、キャラクター風にデコレーションして楽しめる、参加型の体験イベントです。<br><br>ふわふわのわたあめを作るワクワク感と、顔シールなどで仕上げていく楽しさが合わさることで、親子で写真を撮りたくなるシーンお子さまが「見て見て！」と出来上がりを見せてくれる瞬間その様子をきっかけに生まれるスタッフとの会話など、自然なコミュニケーションが生まれやすいのが特徴です。<br><br>カーディーラー・住宅展示場・保険代理店・ショッピングモールなど、「ファミリーで来てほしい」「ゆっくり見て・話してほしい」場面でご活用いただきやすいコンテンツです。
+    </p>
+  </div>
+  <!-- ▲ 横並びここまで -->
 
 
-<!-- ３ＢＯＸ -->
-<div class="pc-fcc-3box">
-  <div class="pc-fcc-3box-container";>
-    <div class="pc-fcc-box-title">オリジナルキャラ<br>対応可</div>
-    <div class="pc-fcc-box-title">設営から実施<br>一気通貫で対応</div>
-    <div class="pc-fcc-box-title">目的に合った<br>プラン提案</div>
+  <!-- ３ＢＯＸ -->
+  <div class="pc-fcc-3box">
+    <div class="pc-fcc-3box-container">
+      <div class="pc-fcc-box-title">オリジナルキャラ<br>対応可</div>
+      <div class="pc-fcc-box-title">設営から実施<br>一気通貫で対応</div>
+      <div class="pc-fcc-box-title">目的に合った<br>プラン提案</div>
+    </div>
   </div>
 </div>
-</div>
+
 
 
 
@@ -1323,7 +1317,7 @@ body {
   box-sizing: border-box;
   text-align: center;
   padding: 20px 20px 40px;
-  margin-top: -100px;
+  margin-top: -60px;
 }
 
 .pc-fcc-first-view-title {
@@ -1501,39 +1495,87 @@ body {
 
 
 
+/* ========================================================= */
 /* ===== 【セクション】【ＰＣ】キャラクターわたあめ作成体験イベントとは？ ===== */
-/* ラッパーで背景色を全幅に */
+/* ========================================================= */
+
+/* ▼ セクション全体（背景・余白） */
 .pc-character-wataame-section-wrapper {
-  width: 100%; /* 画面幅いっぱい */
-  background-color: #fff; /* 背景色（必要に応じて変更可） */
+  width: 100%;
+  background-color: #fff;
   box-sizing: border-box;
   text-align: center;
-  padding: 40px 20px; /* 内側余白を追加してバランスを確保 */
+  padding: 40px 20px;
 }
 
-/* タイトル */
+/* ▼ タイトル */
 .pc-character-wataame-section-title {
-  margin:0 !important;
+  margin: 0 !important;
   font-weight: 900;
   font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   user-select: none;
   white-space: nowrap;
   display: inline-block;
-  background-color: transparent; /* 背景色はラッパーに持たせる */
+  background-color: transparent;
 }
 
-/* 説明文 */
+/* ▼ テキスト（段落） */
 .pc-character-wataame-section-description {
   color: #6f5436;
   font-weight: bold;
   font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  font-size: 22px;
+  font-size: 18px;/* ← HTML側で変更中 */
   line-height: 1.8;
+  flex: 1;
+  text-align: left;
+  max-width: 600px;          /* ← テキストの折り返し幅を固定 */
 }
 
-/*===== ３ＢＯＸ =====*/
+/* ========================================================= */
+/* ▼ 画像＋テキスト 横並び */
+/* ========================================================= */
 
-/* セクション全体 */
+.pc-character-wataame-flex {
+  display: flex;
+  align-items: center;          /* 縦位置中央 */
+  justify-content: center;
+  gap: 60px;                    /* 画像とテキストの距離 */
+  max-width: 1200px;            /* 横幅制限（PCで見やすい幅） */
+  margin: 0 auto;               /* 中央寄せ */
+  padding: 20px;
+}
+
+/* 画像エリア */
+.pc-character-wataame-image-row {
+  display: flex;
+  justify-content: center;
+}
+
+.pc-character-wataame-image-row img {
+  width: 100%;
+  max-width: 650px;             /* 大画面でも見やすい最大幅 */
+  height: auto;                 /* 比率を維持して縮む */
+  object-position: 30% center;/* ← 左側を少し広く見せる */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ▼ スマホ・タブレット時は縦並びに崩す */
+@media (max-width: 900px) {
+  .pc-character-wataame-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pc-character-wataame-section-description {
+    text-align: center;
+  }
+}
+
+/* ========================================================= */
+/* ===== ３ＢＯＸ ===== */
+/* ========================================================= */
+
+/* ▼ 3BOX 全体 */
 .pc-fcc-3box {
   display: flex;
   justify-content: center;
@@ -1541,19 +1583,19 @@ body {
   background-color: #fff;
 }
 
-/* 四角を横並びにするコンテナ */
+/* ▼ ボックスを横並びにするコンテナ */
 .pc-fcc-3box-container {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* 四角のデザイン */
+/* ▼ 四角ボックスデザイン */
 .pc-fcc-box-title {
   width: 200px;
   height: 160px;
-  border-radius: 20px; /* ← 丸みのある角 */
+  border-radius: 20px;
   background-color: #67b5b7;
   display: flex;
   align-items: center;
@@ -1566,6 +1608,7 @@ body {
   transition: transform 0.3s, background-color 0.3s;
   font-size: 24px;
 }
+
 
 
 
@@ -1601,30 +1644,45 @@ body {
   box-sizing: border-box;
   padding: 30px 15px;
   background-color: #f5ecf4;
-  position: relative; /* ←画像配置のため追加 */
-  overflow: hidden;   /* 画像がはみ出さないように */
+  position: relative; /* 画像配置のため */
+  overflow: hidden;   /* はみ出し防止 */
 }
+
+/* ▼ ゆらゆらアニメーション（共通） */
+.pc-reasons-deco-left,
+.pc-reasons-deco-right {
+  animation: swing 4s linear infinite;
+  transform-origin: center center;
+}
+
+/* ▼ キーフレーム（3°ずつ揺れる） */
+@keyframes swing {
+  0%   { transform: rotate(calc(var(--base-rotate) - 4deg)); }
+  50%  { transform: rotate(calc(var(--base-rotate) + 4deg)); }
+  100% { transform: rotate(calc(var(--base-rotate) - 4deg)); }
+}
+
 
 /* 左画像（下の方に配置） */
 .pc-reasons-deco-left {
   position: absolute;
-  left: 80px;                 /* 左寄せ */
-  bottom: 200px;           /* 下にずらす（調整可） */
-  width: 200px;            /* サイズ調整可 */
-  height: auto;   /* ←指定しない or auto にする（比率維持） */
-  transform: rotate(-6deg); /* 角度調整可 */
+  left: 80px;
+  bottom: 200px;
+  width: 200px;
+  height: auto;
+  --base-rotate: -6deg;
   opacity: 0.9;
-  pointer-events: none;     /* 画像をクリック不可 */
+  pointer-events: none;
 }
 
 /* 右画像（上の方に配置） */
 .pc-reasons-deco-right {
   position: absolute;
-  right: 80px;                /* 右寄せ */
-  top: 350px;              /* 上にずらす（調整可） */
-  width: 200px;            /* サイズ調整可 */
-  height: auto;   /* ←指定しない or auto にする（比率維持） */
-  transform: rotate(8deg); /* 角度調整可 */
+  right: 80px;
+  top: 350px;
+  width: 200px;
+  height: auto;
+  --base-rotate: 8deg;
   opacity: 0.9;
   pointer-events: none;
 }
@@ -1716,37 +1774,38 @@ body {
   }
 }
 
-/* モニターサイズ別表示バランス調整コード */
 /* ===== ノートPC向け調整（1280px以下） ===== */
 @media screen and (max-width: 1366px) and (min-width: 1024px) {
 
   /* ▼ 左の画像（ノートPC用） */
   .pc-reasons-deco-left {
-    width: 160px;        /* 画像を少し小さく */
-    bottom: 300px;       /* カードにかぶらないように調整 */
-    left: 50px;          /* 左の余白は少し狭める */
+    width: 160px;
+    bottom: 300px;
+    left: 50px;
     transform: rotate(-4deg);
   }
 
   /* ▼ 右の画像（ノートPC用） */
   .pc-reasons-deco-right {
     width: 160px;
-    top: 500px;          /* ノートPCでは下げないと重なる */
+    top: 500px;
     right: 40px;
     transform: rotate(6deg);
   }
 
-  /* ▼ カードの幅を少し縮めると崩れにくい */
+  /* ▼ カード幅調整 */
   .pc-three-reasons-step {
-    width: 700px;        /* デスクトップより少し狭く */
+    width: 700px;
     padding: 20px;
   }
 
-  /* ▼ セクション内の余白も少し調整（余白が狭いPC向け） */
+  /* ▼ セクション余白調整 */
   .pc-three-reasons-wrapper {
     padding: 20px 0 100px;
   }
 }
+
+
 
 
 
@@ -3369,6 +3428,17 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- 【セクション】【MB】選ばれる３つの理由 -->
 <div id="mb-section003" class="mb-three-reasons-wrapper">
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <!-- 最上部：右側に揺れる画像 -->
+  <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/101.png"
+       alt="" class="mb-reasons-deco-right">
+
   <h2 class="mb-three-reasons-main-title" style="font-size: 28px; font-weight: bold;">
       選ばれる３つの理由
   </h2>
@@ -3376,11 +3446,13 @@ document.addEventListener("DOMContentLoaded", function() {
   <!-- 理由紹介 -->
   <div class="mb-reasons-list">
 
-    <!-- 01 家族層に強い集客力 -->
+    <!-- 01 -->
     <div class="mb-three-reasons-step">
       <div class="mb-three-reasons-title">
         <span class="mb-three-reasons-list-number">01</span>
-        <span class="mb-three-reasons-heading" style="font-size: 18px; font-weight: bold;">家族層に強い集客力</span>
+        <span class="mb-three-reasons-heading" style="font-size: 18px; font-weight: bold;">
+          家族層に強い集客力
+        </span>
       </div>
 
       <div class="mb-three-reasons-content">
@@ -3388,11 +3460,13 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
     </div>
 
-    <!-- 02 SNSでの拡散力 -->
+    <!-- 02 -->
     <div class="mb-three-reasons-step">
       <div class="mb-three-reasons-title">
         <span class="mb-three-reasons-list-number">02</span>
-        <span class="mb-three-reasons-heading" style="font-size: 18px; font-weight: bold;">SNSでの拡散力</span>
+        <span class="mb-three-reasons-heading" style="font-size: 18px; font-weight: bold;">
+          SNSでの拡散力
+        </span>
       </div>
 
       <div class="mb-three-reasons-content">
@@ -3400,20 +3474,38 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
     </div>
 
-    <!-- 03 準備からすべてお任せ -->
+    <!-- 03 -->
     <div class="mb-three-reasons-step">
       <div class="mb-three-reasons-title">
         <span class="mb-three-reasons-list-number">03</span>
-        <span class="mb-three-reasons-heading" style="font-size: 18px; font-weight: bold;">準備からすべてお任せ</span>
+        <span class="mb-three-reasons-heading" style="font-size: 18px; font-weight: bold;">
+          準備からすべてお任せ
+        </span>
       </div>
 
       <div class="mb-three-reasons-content">
-        <p>事前のヒアリングから当日の設営・運営・撤収まで、専任スタッフがトータルでサポートします。機材や備品、材料の手配もこちらで対応するため、ご担当者さまにお願いしたいのは「スペースのご用意」と 「告知・当日の簡単な連携」程度です。食品を扱うイベントが初めての施設様でも、衛生管理や安全面に配慮したオペレーションで、安心してお任せいただけます</p>
+        <p>事前のヒアリングから当日の設営・運営・撤収まで、専任スタッフがトータルでサポートします。機材や備品、材料の手配もこちらで対応するため、ご担当者さまにお願いしたいのは「スペースのご用意」と 「告知・当日の簡単な連携」程度です。食品を扱うイベントが初めての施設様でも、衛生管理や安全面に配慮したオペレーションで、安心してお任せいただけます。</p>
       </div>
     </div>
 
   </div>
+
+  <!-- 最下部：左側に揺れる画像 -->
+  <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/28.png"
+       alt="" class="mb-reasons-deco-left">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 </div>
+
+
+
+
 
 
 
@@ -4478,6 +4570,48 @@ TEL　047-407-1002　FAX　047-407-1002
   margin: 10px 0;
   object-fit: cover;
 }
+
+/* ▼ ゆらゆらアニメーション（共通） */
+.mb-reasons-deco-left,
+.mb-reasons-deco-right {
+  animation: mb-swing 4s linear infinite;
+  transform-origin: center center;
+  position: absolute;
+  width: 90px;      /* ← モバイル向けに小さく調整 */
+  height: auto;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ▼ キーフレーム（揺れ） */
+@keyframes mb-swing {
+  0%   { transform: rotate(calc(var(--base-rotate) - 4deg)); }
+  50%  { transform: rotate(calc(var(--base-rotate) + 4deg)); }
+  100% { transform: rotate(calc(var(--base-rotate) - 4deg)); }
+}
+
+/* ▼ 最上部画像（下へ移動） */
+.mb-reasons-deco-right {
+  right: 40px;
+  top: 40px;      /* ← -20px から +40px に変更：下へ移動 */
+  --base-rotate: 8deg;
+}
+
+/* ▼ 最下部画像（上へ移動） */
+.mb-reasons-deco-left {
+  left: 40px;
+  bottom: 40px;   /* ← -30px から +40px に変更：上へ移動 */
+  --base-rotate: -6deg;
+}
+
+
+
+
+
+
+
+
 
 
 
