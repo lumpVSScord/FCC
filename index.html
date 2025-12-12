@@ -3549,26 +3549,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!-- 【セクション】【MB】Ｆａｉｒｙ　Ｃｏｔｔｏｎ　Ｃａｎｄｙについて -->
 <div id="mb-section001" class="mb-fcc-section-wrapper">
-  <h2 class="mb-fcc-section-title">
-      Fairy Cotton Candy
-  </h2>
+  <div class="mb-fcc-section-content">
+    <h2 class="mb-fcc-section-title">
+        Fairy Cotton Candy
+    </h2>
 
-  <p class="mb-fcc-section-subtitle" style="font-weight: bold;">
-      フェアリーコットンキャンディー
-  </p>
+    <p class="mb-fcc-section-subtitle" style="font-weight: bold;">
+        フェアリーコットンキャンディー
+    </p>
 
-  <p class="mb-fcc-section-description" style="font-weight: bold; line-height: 2.5;">
-      見てかわいい・作って楽しい・食べておいしいを<br>一度に楽しめる、話題の体験型イベントです。<br><br>
-      沖縄県北谷町のわたあめ専門店<br>「Fairy cotton candy」がプロデュースし、<br>
-      カラフルなわたあめを使って<br>「クマ」「ウサギ」などのキャラクターを<br>その場で作ることができます。<br><br>
-      小さなお子さまから大人まで<br>夢中になる体験は、ファミリー層を中心に大人気。
-  </p>
-</div>
+    <div class="mb-fcc-description-item">
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/fcc-shop.png" alt="Fairy Cotton Candy 本店の写真" class="mb-fcc-description-image">
+      <p class="mb-fcc-section-description" style="font-weight: bold;">
+          見てかわいい・作って楽しい・食べておいしいを<br>一度に楽しめる、話題の体験型イベントです。
+      </p>
+    </div>
 
-<!-- 【画像】【MB】ＦＣＣ -->
-<div class="mb-fcc-image-row">
-  <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/fcc-shop.png" alt="画像1">
-  <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/fcc-flavor.png" alt="画像2">
+    <div class="mb-fcc-description-item">
+      <p class="mb-fcc-section-description" style="font-weight: bold;">
+          沖縄県北谷町のわたあめ専門店「Fairy cotton candy」がプロデュースし、カラフルなわたあめを使って「クマ」「ウサギ」などのキャラクターをその場で作ることができます。
+      </p>
+      <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/11/fcc-flavor.png" alt="カラフルなフレーバーの写真" class="mb-fcc-description-image">
+    </div>
+
+    <p class="mb-fcc-section-note" style="font-weight: bold;">
+        小さなお子さまから大人まで夢中になる体験は、ファミリー層を中心に大人気。
+    </p>
+  </div>
 </div>
 
 
@@ -4501,11 +4508,19 @@ TEL　047-407-1002　FAX　047-407-1002
 /* ===== 【セクション】【ＭＢ】Ｆａｉｒｙ　Ｃｏｔｔｏｎ　Ｃａｎｄｙについて ===== */
 /* Fairy Cotton Candyの背景色を全幅に */
 .mb-fcc-section-wrapper {
+  position: relative;
+  overflow: hidden;
   width: 100%; /* 画面幅いっぱい */
-  background-color: #de82a7; /* 背景色 */
+  background: linear-gradient(135deg, #de82a7 0%, #f7c7dc 100%);
   box-sizing: border-box;
+  padding: 28px 16px; /* モバイル向けに少し縮小 */
+}
+
+.mb-fcc-section-content {
   text-align: center;
-  padding: 30px 15px; /* モバイル向けに少し縮小 */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 /* Fairy Cotton Candyタイトル */
@@ -4539,29 +4554,33 @@ TEL　047-407-1002　FAX　047-407-1002
   color: white;
   font-weight: bold;
   font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  font-size: 16px; /* モバイル向け縮小 */
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 90%; /* 横幅制限で読みやすく */
+  font-size: 15px; /* モバイル向け縮小 */
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
 }
 
-/* ===== 【画像】【MB】ＦＣＣ ===== */
-.mb-fcc-image-row {
+.mb-fcc-description-item {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px; /* モバイルは間隔を狭く */
-  padding: 40px 0;
-  width: 100%;
-  background-color: #de82a7;
-  flex-wrap: wrap; /* 小さい画面で折り返し可能に */
+  gap: 12px;
+  text-align: left;
 }
 
-.mb-fcc-image-row img {
-  width: 140px; /* モバイル向けに縮小 */
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.mb-fcc-description-image {
+  width: 42%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.mb-fcc-section-note {
+  color: white;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 4px 0 0;
 }
 
 
