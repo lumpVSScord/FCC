@@ -5058,6 +5058,22 @@ TEL　047-407-1002　FAX　047-407-1002
     background-color: #fff;
   }
 
+  /* スライドコンテナ */
+  .mb-fcc-event-flow-column {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 10px 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mb-fcc-event-flow-column::-webkit-scrollbar {
+    display: none;
+  }
+
   /* タイトル */
   .mb-fcc-event-flow-title {
     font-size: 32px;   /* タイトル縮小 */
@@ -5092,16 +5108,11 @@ TEL　047-407-1002　FAX　047-407-1002
     background-color: #f5ecf4;
     border-radius: 16px;
     padding: 20px;
-    width: 90%;  /* ← 適度に余白を確保 */
+    flex: 0 0 85%;
     max-width: 500px; /* ← 画面が広くても中央にまとまる */
     box-sizing: border-box;
-    margin: 0 auto 25px auto; /* ← 左右中央寄せを確実にする */
-  }
-
-
-  /* 最後のボックスだけ余白をなくす */
-  .mb-fcc-event-item:last-child {
-    margin-bottom: 0;
+    margin: 0 auto; /* ← 左右中央寄せを確実にする */
+    scroll-snap-align: center;
   }
 
   /* 番号 */
