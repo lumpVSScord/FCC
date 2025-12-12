@@ -3587,19 +3587,29 @@ document.addEventListener("DOMContentLoaded", function() {
   </h2>
 
 <br>
-<br>
 
-  <p class="mb-character-wataame-section-description" style="font-size: 16px; font-weight: bold; line-height: 1.6;">
-オリジナルの世界観で装飾されたブースの中で、<br>お子さまが自分の手でわたあめを作り、<br>キャラクター風にデコレーションして楽しめる、<br>参加型の体験イベントです。<br><br>ふわふわのわたあめを作るワクワク感と、<br>顔シールなどで仕上げていく楽しさが合わさることで、親子で写真を撮りたくなるシーン<br><br>お子さまが「見て見て！」と出来上がりを見せてくれる瞬間その様子をきっかけに生まれるスタッフとの会話など、自然なコミュニケーションが生まれやすいのが特徴です。<br><br>カーディーラー・住宅展示場・保険代理店<br>・ショッピングモールなど、「ファミリーで来てほしい」<br>「ゆっくり見て・話してほしい」場面で<br>ご活用いただきやすいコンテンツです。
-  </p>
+  <div class="mb-character-wataame-content">
+    <div class="mb-character-wataame-text">
+      <p class="mb-character-wataame-section-description" style="font-size: 16px; font-weight: bold; line-height: 1.6;">
+オリジナルの世界観で装飾されたブースの中で、<br>お子さまが自分の手でわたあめを作り、<br>キャラクター風にデコレーションして楽しめる、<br>参加型の体験イベントです。<br><br>ふわふわのわたあめを作るワクワク感と、<br>顔シールなどで仕上げていく楽しさが合わさることで、親子で写真を撮りたくなるシーン<br><br>お子さまが「見て見て！」と出来上がりを見せてくれる瞬間その様子をきっかけに生まれるスタッフとの会話など、自然なコミュニケーションが生まれやすいのが特徴です。
+      </p>
+
+      <div class="mb-character-wataame-usage-row">
+        <!-- 【画像】【MB】キャラクターわたあめイベント -->
+        <div class="mb-character-wataame-image-row">
+          <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test3.jpg" alt="画像1" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+
+        <div class="mb-character-wataame-usage-text">
+          <p class="mb-character-wataame-section-description" style="font-size: 16px; font-weight: bold; line-height: 1.6;">
+カーディーラー・住宅展示場・保険代理店・ショッピングモールなど、「ファミリーで来てほしい」「ゆっくり見て・話してほしい」場面でご活用いただきやすいコンテンツです。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <br>
-<br>
-
-<!-- 【画像】【MB】キャラクターわたあめイベント -->
-<div class="mb-character-wataame-image-row">
-  <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/10/test3.jpg" alt="画像1" style="width: 100%; max-width: 250px; height: auto; border-radius: 8px;">
-</div>
 
 <!-- ３ＢＯＸ -->
 <div class="mb-fcc-3box">
@@ -4606,6 +4616,16 @@ TEL　047-407-1002　FAX　047-407-1002
   display: inline-block;
 }
 
+/* テキストと画像の配置 */
+.mb-character-wataame-content {
+  display: block;
+  margin-top: 10px;
+}
+
+.mb-character-wataame-text {
+  text-align: left;
+}
+
 /* 説明文 */
 .mb-character-wataame-section-description {
   color: #6f5436;
@@ -4651,15 +4671,28 @@ TEL　047-407-1002　FAX　047-407-1002
 }
 
 /* ===== 【画像】【MB】キャラクターわたあめ作成体験イベントとは？ ===== */
+.mb-character-wataame-usage-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 12px;
+}
+
 .mb-character-wataame-image-row {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  justify-content: flex-start;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.mb-character-wataame-usage-text {
+  flex: 1 1 0;
+  text-align: left;
 }
 
 .mb-character-wataame-image-row img {
   width: 100%;
-  max-width: 250px;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
