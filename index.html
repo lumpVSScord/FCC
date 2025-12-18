@@ -96,7 +96,7 @@
     </button>
 
     <button id="open-document-modal" class="fv-btn fv-right-btn">
-      資料・お見積りの依頼をする
+      資料をダウンロード<br>お見積りの依頼をする
     </button>
   </div>
 
@@ -800,7 +800,7 @@ TEL 047-407-1002 FAX 047-407-1002
 
     <div class="pc-contact-btns">
       <a id="open-booking" class="pc-contact-btn btn-blue"><span>お問い合わせ</span></a>
-      <a href="#" class="pc-contact-btn btn-pink"><span>資料請求</span></a>
+      <a href="#" class="pc-contact-btn btn-pink"><span>資料をダウンロード<br>お見積りの依頼をする</span></a>
     </div>
   </div>
 </section>
@@ -3364,91 +3364,108 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- 【スクリプト】資料請求フォーム・モーダル表示 -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("document-form");
-  const downloadBtn = document.getElementById("download-btn");
-  const docModal = document.getElementById("document-modal");
-
-  // 必須項目とプライバシーチェック
-  const requiredFields = ['name','company','department','position','email','tel','source'];
-  const privacyCheck = document.getElementById("privacy-check");
-
-  // フォーム有効性チェック
-  function checkFormValidity() {
-    let isValid = requiredFields.every(name => {
-      const input = form.querySelector(`[name="${name}"]`);
-      return input && input.value.trim() !== "";
-    });
-    if (privacyCheck) isValid = isValid && privacyCheck.checked;
-
-    downloadBtn.disabled = !isValid;
-    downloadBtn.style.backgroundColor = isValid ? "#e75480" : "gray";
-    downloadBtn.style.cursor = isValid ? "pointer" : "not-allowed";
-  }
-
-  requiredFields.forEach(name => {
-    const input = form.querySelector(`[name="${name}"]`);
-    if(input) input.addEventListener("input", checkFormValidity);
-  });
-  if(privacyCheck) privacyCheck.addEventListener("change", checkFormValidity);
-
-  checkFormValidity();
-
-  // 送信処理
-  downloadBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    if(downloadBtn.disabled) return;
-
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData
-    })
-    .then(response => {
-      if(response.ok) {
-        alert("送信が完了しました。自動返信メールをご確認ください。");
-        form.reset();
-        checkFormValidity();
-        docModal.style.display = "none";
-      } else {
-        alert("送信中にエラーが発生しました。時間を置いて再度お試しください。");
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert("送信中にエラーが発生しました。ネットワークを確認してください。");
-    });
-  });
-
-  // モーダル開閉（既存ボタンを流用）
-  const openDocBtn = document.querySelector(".btn-pink");
-  const closeDocBtn = document.getElementById("close-document-modal");
-
-  if(openDocBtn) {
-    openDocBtn.addEventListener("click", function(e){
-      e.preventDefault();
-      docModal.style.display = "block";
-    });
-  }
-
-  if(closeDocBtn) {
-    closeDocBtn.addEventListener("click", function() {
-      docModal.style.display = "none";
-    });
-  }
-
-  // プライバシーポリシーモーダル
-  const privacyModal = document.getElementById('privacy-modal');
-  const openPrivacyBtn = document.getElementById('open-privacy-modal');
-  const closePrivacyBtn = document.getElementById('close-privacy-modal');
-
-  if(openPrivacyBtn) openPrivacyBtn.addEventListener('click', function() {
-    privacyModal.style.display = 'block';
-  });
-  if(closePrivacyBtn) closePrivacyBtn.addEventListener('click', function() {
-    privacyModal.style.display = 'none';
-  });
-
+ const form = document.getElementById("document-form");
+ const downloadBtn = document.getElementById("download-btn");
+ const docModal = document.getElementById("document-modal");
+ const bookingModal = document.getElementById("booking-modal");
+ 
+ // ▼▼ ダウンロード資料URL（★ここだけ必ず変更）
+ const DOWNLOAD_URL = "https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/lumpcore_character-wataame_event-service_ver.1.pdf";
+ 
+ // 必須項目とプライバシーチェック
+ const requiredFields = ['name','company','department','position','email','tel','source'];
+ const privacyCheck = document.getElementById("privacy-check");
+ 
+ // フォーム有効性チェック
+ function checkFormValidity() {
+   let isValid = requiredFields.every(name => {
+     const input = form.querySelector(`[name="${name}"]`);
+     return input && input.value.trim() !== "";
+   });
+   if (privacyCheck) isValid = isValid && privacyCheck.checked;
+ 
+   downloadBtn.disabled = !isValid;
+   downloadBtn.style.backgroundColor = isValid ? "#e75480" : "gray";
+   downloadBtn.style.cursor = isValid ? "pointer" : "not-allowed";
+ }
+ 
+ requiredFields.forEach(name => {
+   const input = form.querySelector(`[name="${name}"]`);
+   if(input) input.addEventListener("input", checkFormValidity);
+ });
+ if(privacyCheck) privacyCheck.addEventListener("change", checkFormValidity);
+ 
+ checkFormValidity();
+ 
+ // ▼▼ フォーム送信 & ダウンロード処理
+downloadBtn.addEventListener("click", function(e) {
+   e.preventDefault();
+   if(downloadBtn.disabled) return;
+ 
+   const formData = new FormData(form);
+ 
+   fetch(form.action, {
+     method: "POST",
+     body: formData
+   })
+   .then(response => {
+     if(!response.ok) throw new Error("送信失敗");
+ 
+     // ① フォーム送信成功
+     // ② 資料ダウンロード開始
+     const a = document.createElement("a");
+     a.href = DOWNLOAD_URL;
+     a.download = "";
+     document.body.appendChild(a);
+     a.click();
+     document.body.removeChild(a);
+ 
+     // ③ フォームを閉じる
+     docModal.style.display = "none";
+ 
+     // ④ 商談予約モーダルを表示（少し間をあける）
+     setTimeout(() => {
+       bookingModal.style.display = "block";
+     }, 800);
+ 
+     // ⑤ フォームリセット
+     form.reset();
+     checkFormValidity();
+   })
+   .catch(error => {
+     console.error(error);
+     alert("送信中にエラーが発生しました。時間を置いて再度お試しください。");
+   });
+ });
+ 
+ // モーダル開閉（資料請求）
+ const openDocBtn = document.querySelector(".btn-pink");
+ const closeDocBtn = document.getElementById("close-document-modal");
+ 
+ if(openDocBtn) {
+  openDocBtn.addEventListener("click", function(e){
+     e.preventDefault();
+     docModal.style.display = "block";
+   });
+ }
+ 
+ if(closeDocBtn) {
+  closeDocBtn.addEventListener("click", function() {
+     docModal.style.display = "none";
+   });
+ }
+ 
+ // プライバシーポリシーモーダル
+ const privacyModal = document.getElementById('privacy-modal');
+ const openPrivacyBtn = document.getElementById('open-privacy-modal');
+ const closePrivacyBtn = document.getElementById('close-privacy-modal');
+ 
+ if(openPrivacyBtn) openPrivacyBtn.addEventListener('click', function() {
+   privacyModal.style.display = 'block';
+ });
+ if(closePrivacyBtn) closePrivacyBtn.addEventListener('click', function() {
+   privacyModal.style.display = 'none';
+ });
 });
 </script>
 
@@ -3534,7 +3551,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <span>お問い合わせ</span>
   </a>
   <a class="mb-contact-btn btn-pink mb-open-document">
-    <span>資料請求</span>
+    <span>資料をダウンロード<br>お見積りの依頼をする</span>
   </a>
 
 <br>
@@ -4077,7 +4094,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <span>お問い合わせ</span>
       </a>
       <a id="mb-open-document" class="mb-contact-btn btn-pink" href="#">
-        <span>資料請求</span>
+        <span>資料をダウンロード<br>お見積りの依頼をする</span>
       </a>
     </div>
   </div>
