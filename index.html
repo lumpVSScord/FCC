@@ -6144,10 +6144,14 @@ document.addEventListener("DOMContentLoaded", function() {
   const modal = document.getElementById("mb-document-modal");
   const openBtn = document.getElementById("mb-open-document");
   const closeBtn = document.getElementById("mb-close-document-modal");
+  const bookingModal = document.getElementById("mb-booking-modal");
 
   /* ▼▼ ダウンロードボタン制御 */
   const downloadBtn = document.getElementById("mb-download-btn");
   const privacyCheck = document.getElementById("mb-privacy-check");
+
+  /* ▼▼ ダウンロード資料URL（ＰＣと同じ） */
+  const DOWNLOAD_URL = "https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/lumpcore_character-wataame_event-service_ver.1.pdf";
 
   /* ▼▼ プライバシーポリシーモーダル */
   const privacyModal = document.getElementById("mb-privacy-modal");
@@ -6220,6 +6224,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   /* ---------- フォーム送信（GAS） ---------- */
   downloadBtn.addEventListener("click", function(e) {
+    e.preventDefault();
     if (downloadBtn.disabled) return;
 
     // 送信データを作成
@@ -6235,25 +6240,44 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const url = document.getElementById("mb-document-form").action;
 
+    // 事前にタブを開いてポップアップブロックを回避する（失敗時は閉じる）
+    const preOpenedTab = window.open("", "_blank");
+
     fetch(url, {
       method: "POST",
       body: formData,
     })
-    .then(response => response.text())
-    .then(result => {
-      if(result === "success"){
-        alert("資料請求が送信されました。担当者よりご連絡いたします。");
-        modal.style.display = "none";
-        document.body.style.overflow = "";
-        document.getElementById("mb-document-form").reset();
-        checkFormValidity();
+    .then(response => {
+      if (!response.ok) throw new Error("送信失敗");
+      return response.text();
+    })
+    .then(() => {
+      if (preOpenedTab) {
+        preOpenedTab.location.href = DOWNLOAD_URL;
       } else {
-        alert("送信中にエラーが発生しました。時間をおいて再度お試しください。");
+        const downloadLink = document.createElement("a");
+        downloadLink.href = DOWNLOAD_URL;
+        downloadLink.target = "_blank"; // モバイルでも閉じられるよう新規タブで開く
+        downloadLink.rel = "noopener";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
       }
+
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+
+      setTimeout(() => {
+        if (bookingModal) bookingModal.style.display = "block";
+      }, 800);
+
+      document.getElementById("mb-document-form").reset();
+      checkFormValidity();
     })
     .catch(error => {
+      if (preOpenedTab) preOpenedTab.close();
       console.error("送信エラー:", error);
-      alert("送信中にエラーが発生しました。");
+      alert("送信中にエラーが発生しました。時間をおいて再度お試しください。");
     });
   });
 
