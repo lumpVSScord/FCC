@@ -57,49 +57,46 @@
 
 
 
-<!-- 【セクション】【ＰＣ】ＦＣＣヘッダー -->
-<div class="pc-fcc-image-header-section-wrapper">
+<!-- 【セクション】【ＰＣ】ＦＣＣヘッダー ＋ ファーストビュー -->
+<div id="section0" class="pc-fcc-image-header-section-wrapper">
+  <div class="pc-fcc-floating-clouds" aria-hidden="true">
+    <img src="１.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-1">
+    <img src="２.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-2">
+    <img src="３.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-3">
+    <img src="４.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-4">
+    <img src="５.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-5">
+    <img src="６.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-6">
+  </div>
+
   <div class="pc-fcc-image-header-image">
-    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/FCCLPFV.png" alt="画像1">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/FV元データ.png" alt="画像1">
+
+    <div class="pc-fcc-image-header-texts">
+      <h1 class="pc-fcc-image-header-section-title";>
+        映えるわたあめ作り体験で、<br>ファミリーが集まりたくなるイベントを。
+      </h1>
+    </div>
   </div>
 
-  <div class="pc-fcc-image-header-texts">
-    <h1 class="pc-fcc-image-header-section-title";>
-      映えるわたあめ作り体験で、<br>ファミリーが集まりたくなるイベントを。 
-    </h1>
+  <div class="pc-fcc-hero-body">
+    <p class="pc-fcc-hero-lead">
+      わたあめイベントは、 カーディーラー・住宅展示場・保険代理店・ショッピングモールなど、
+      ファミリー向けイベントを実施される企業・施設様向けの「わたあめ作り体験イベント」です。
+      家族で楽しめるコンテンツは用意したいけれど、準備や運営の負担はできるだけ増やしたくない。
+      そして、楽しんでもらって終わりではなく、その後の会話やご案内にもつなげていきたい。
+      そんなご担当者さまに向けて設計した、参加型で“映える”体験コンテンツをご提供します。
+    </p>
 
-  <p class="pc-fcc-image-header-section-subtitle">
+    <div class="pc-fcc-first-view-btn-wrapper">
+      <button id="open-booking-modal" class="fv-btn fv-left-btn">
+        お問い合わせ・ご相談はこちら
+      </button>
 
-  </p>
-
+      <button id="open-document-modal" class="fv-btn fv-right-btn">
+        資料をダウンロード<br>お見積りの依頼をする
+      </button>
+    </div>
   </div>
-</div>
-
-
-
-
-
-<!-- 【セクション】【ＰＣ】ファーストビュー -->
-<div id="section0" class="pc-fcc-first-view-wrapper">
-  <p class="pc-fcc-first-view-title"><br>
-      わたあめイベントは、 カーディーラー・住宅展示場・保険代理店・ショッピングモールなど、<br>
-      ファミリー向けイベントを実施される企業・施設様向けの「わたあめ作り体験イベント」です。<br>
-      家族で楽しめるコンテンツは用意したいけれど、準備や運営の負担はできるだけ増やしたくない。<br>
-      そして、楽しんでもらって終わりではなく、その後の会話やご案内にもつなげていきたい。<br>
-      そんなご担当者さまに向けて設計した、参加型で“映える”体験コンテンツをご提供します。<br><br>
-  </p>
-
-  <!-- ▼ 2つのボタン -->
-  <div class="pc-fcc-first-view-btn-wrapper">
-    <button id="open-booking-modal" class="fv-btn fv-left-btn">
-      お問い合わせ・ご相談はこちら
-    </button>
-
-    <button id="open-document-modal" class="fv-btn fv-right-btn">
-      資料をダウンロード<br>お見積りの依頼をする
-    </button>
-  </div>
-
 </div>
 
 
@@ -1091,41 +1088,46 @@ body {
 .pc-fcc-image-header-section-wrapper {
   position: relative;
   width: 100%;
-  height: 60vh;         /* 下部の余白をさらに抑えてコンパクトに */
+  min-height: 90vh;     /* テキスト分の余白も確保する */
+  padding: 64px 0 96px; /* 上下にゆとりを持たせて重なりを防ぐ */
   overflow: hidden;     /* はみ出した部分を非表示 */
   background-color: #e0c0bf; /* 指定色の背景上に画像を載せる */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ▼ 画像ラッパー */
 .pc-fcc-image-header-image {
-  width: 95%;
-  height: 93%;          /* コンパクト化に合わせてわずかに余白を確保 */
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 62vh;
+  max-height: 720px;
+  margin: 64px auto 0;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(30px); /* ヒーロー内でさらに下げて配置 */
+  z-index: 1;
 }
 
 /* ▼ 画像そのもの */
 .pc-fcc-image-header-image img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;  /* 背景色を活かしつつ画像を縮小表示 */
+  width: 115%;
+  height: 115%;
+  object-fit: contain;  /* 背景色を活かしつつ画像を拡大表示 */
   display: block;
 }
 
 /* ▼ テキストを画像の上に重ねる */
 .pc-fcc-image-header-texts {
   position: absolute;
-  top: 55%;
+  top: 12%;
   left: 50%;
-  transform: translate(-50%, -50%);  /* 中央配置 */
+  transform: translateX(-50%);
   text-align: center;
-  width: 90%;                     /* 親幅の90%以内で表示 */
+  width: min(86%, 920px);
   color: #000;
   z-index: 2;                      /* 画像より上に表示 */
   isolation: isolate;              /* 疑似要素を重ねた際に背面へ抜けないようにする */
@@ -1135,7 +1137,7 @@ body {
 .pc-fcc-image-header-texts::before {
   content: "";
   position: absolute;
-  inset: -6px 24%;
+  inset: -10px 22%;
   background:
     radial-gradient(90% 70% at 28% 42%, rgba(255, 182, 193, 0.7) 0%, rgba(255, 182, 193, 0.4) 50%, rgba(255, 182, 193, 0) 82%),
     radial-gradient(105% 75% at 70% 50%, rgba(173, 216, 230, 0.95) 0%, rgba(173, 216, 230, 0.65) 60%, rgba(173, 216, 230, 0) 90%),
@@ -1165,6 +1167,24 @@ body {
   line-height: 1.5;
 }
 
+.pc-fcc-hero-lead {
+  color: #5c4330;
+  font-weight: 700;
+  font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: clamp(16px, 2.4vw, 24px);
+  line-height: 1.9;
+  margin: 0 auto 26px;
+  text-shadow: none;
+}
+
+.pc-fcc-hero-body {
+  position: relative;
+  width: min(90%, 980px);
+  margin: 42px auto 0;
+  text-align: center;
+  z-index: 2;
+}
+
 /* ▼ 説明文（必要に応じて） */
 .pc-fcc-image-header-description {
   font-size: clamp(16px, 3vw, 35px);
@@ -1188,11 +1208,41 @@ body {
 
 /* ファーストビュー【モバイル非表示】 */
 @media screen and (max-width: 768px) {
-  .pc-fcc-image-header-section-wrapper {
-    display: none !important;
-  }
+.pc-fcc-image-header-section-wrapper {
+  display: none !important;
+}
 }
 
+.pc-fcc-floating-clouds {
+  position: absolute;
+  inset: -80px -40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pc-fcc-cloud {
+  position: absolute;
+  width: 320px;
+  height: auto;
+  opacity: 0.75;
+  filter: drop-shadow(0 8px 12px rgba(111, 84, 54, 0.18));
+  animation: pc-fcc-float 18s ease-in-out infinite alternate;
+}
+
+.pc-fcc-cloud-1 { top: -10px; left: 2%; animation-duration: 20s; animation-delay: -2s; }
+.pc-fcc-cloud-2 { top: 30%; left: 8%; animation-duration: 22s; animation-delay: -6s; }
+.pc-fcc-cloud-3 { top: -10px; right: 6%; animation-duration: 19s; animation-delay: -4s; }
+.pc-fcc-cloud-4 { bottom: -20px; left: 30%; animation-duration: 21s; animation-delay: -10s; }
+.pc-fcc-cloud-5 { bottom: 10px; right: 18%; animation-duration: 23s; animation-delay: -8s; }
+.pc-fcc-cloud-6 { top: 22%; right: 32%; animation-duration: 20s; animation-delay: -12s; }
+
+@keyframes pc-fcc-float {
+  0% { transform: translate3d(-10px, 16px, 0) scale(0.96) rotate(-1.2deg); }
+  25% { transform: translate3d(16px, -18px, 0) scale(1) rotate(0.6deg); }
+  50% { transform: translate3d(-6px, 10px, 0) scale(1.02) rotate(1.2deg); }
+  75% { transform: translate3d(18px, -14px, 0) scale(0.98) rotate(-0.4deg); }
+  100% { transform: translate3d(-12px, 12px, 0) scale(0.97) rotate(0deg); }
+}
 
 
 
@@ -1343,33 +1393,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================== */
-/* ▼ ファーストビューセクション */
-/* =========================== */
-.pc-fcc-first-view-wrapper {
-  width: 100%;
-  background-color: #e0c0bf;
-  box-sizing: border-box;
-  text-align: center;
-  padding: 20px 20px 40px;
-  margin-top: -60px;
-}
-
-.pc-fcc-first-view-title {
-  color: #6f5436;
-  font-weight: bold;
-  font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  font-size: 25px;
-  line-height: 1.9;
-}
-
-
-/* ▼ ボタンの位置 */
+/* ▼ CTA ボタンの位置 */
 .pc-fcc-first-view-btn-wrapper {
   display: flex;
   justify-content: center;
   gap: 50px !important; /* ← 強制的に反映させる */
   flex-wrap: wrap;
+  margin-top: 18px;
 }
 
 
