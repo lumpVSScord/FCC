@@ -60,12 +60,12 @@
 <!-- 【セクション】【ＰＣ】ＦＣＣヘッダー ＋ ファーストビュー -->
 <div id="section0" class="pc-fcc-image-header-section-wrapper">
   <div class="pc-fcc-floating-clouds" aria-hidden="true">
-    <img src="１.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-1">
-    <img src="２.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-2">
-    <img src="３.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-3">
-    <img src="４.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-4">
-    <img src="５.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-5">
-    <img src="６.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-6">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/wataame1.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-1">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/wataame2.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-2">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/wataame3.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-3">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/wataame4.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-4">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/wataame5.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-5">
+    <img src="https://lumpcore.co.jp/lc/wp/wp-content/uploads/2025/12/wataame6.png" alt="" class="pc-fcc-cloud pc-fcc-cloud-6">
   </div>
 
   <div class="pc-fcc-image-header-image">
@@ -1095,6 +1095,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.pc-fcc-image-header-section-wrapper.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ▼ 画像ラッパー */
@@ -1196,6 +1204,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .pc-fcc-image-header-section-wrapper {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
   .pc-fcc-hero-body {
     transition: none;
     transform: none;
@@ -3216,7 +3229,18 @@ body {
 // ▼ スクロール開始でファーストビュー本文をフェードイン
 // ===========================
 (function () {
+  const firstView = document.querySelector(".pc-fcc-image-header-section-wrapper");
   const heroBody = document.querySelector(".pc-fcc-hero-body");
+
+  if (firstView) {
+    const revealFirstView = () => firstView.classList.add("is-visible");
+
+    if (document.readyState === "complete") {
+      requestAnimationFrame(revealFirstView);
+    } else {
+      window.addEventListener("load", () => requestAnimationFrame(revealFirstView), { once: true });
+    }
+  }
 
   if (!heroBody) return;
 
