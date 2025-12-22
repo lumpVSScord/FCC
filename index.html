@@ -282,6 +282,23 @@ TEL 047-407-1002 FAX 047-407-1002
 </div>
 
 
+<!-- ▼ セクション境界：下の色が上に出る雲型カーブ -->
+<div class="pc-fcc-wave-divider cloud-wave">
+  <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+    <path
+      d="
+        M0,120
+        C120,80 240,80 360,120
+        C480,40 600,40 720,120
+        C840,60 960,60 1080,120
+        C1200,90 1320,90 1440,120
+        L1440,160
+        L0,160
+        Z
+      "
+    />
+  </svg>
+</div>
 
 
 
@@ -317,6 +334,24 @@ TEL 047-407-1002 FAX 047-407-1002
       <div class="pc-fcc-box-title">目的に合った<br>プラン提案</div>
     </div>
   </div>
+</div>
+
+<!-- ▼ セクション区切り：雲型線 -->
+<div class="pc-section-wave">
+<svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <path d="
+      M0,80
+      C60,40 120,40 180,80
+      C240,120 300,120 360,80
+      C420,40 480,40 540,80
+      C600,120 660,120 720,80
+      C780,40 840,40 900,80
+      C960,120 1020,120 1080,80
+      C1140,40 1200,40 1260,80
+      C1320,120 1380,120 1440,80
+      L1440,0 L0,0 Z
+    " />
+  </svg>
 </div>
 
 
@@ -1479,7 +1514,7 @@ body {
   background-color: #ffc0cb;
   box-sizing: border-box;
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px 10px 20px;
 }
 
 /* タイトル */
@@ -1603,6 +1638,38 @@ body {
   .pc-fcc-flex-wrapper {
     gap: 40px;
   }
+}
+
+/* ========================================================= */
+/* ▼ セクション境界：雲型カーブ */
+/* ========================================================= */
+
+.pc-fcc-wave-divider {
+  line-height: 0;
+  background-color: #ffc0cb; /* 上の背景色（ピンク） */
+  position: relative;
+  top: -20px; /* ※調整 */
+}
+
+.pc-character-wataame-section-wrapper {
+  padding-top: 20px; /* ← 「※調整」でずらした分と同じ値 */
+}
+
+
+.pc-fcc-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 160px; /* ← 雲の高さ（調整ポイント①） */
+}
+
+/* ▼ 下の背景色と必ず同じ色にする */
+.pc-fcc-wave-divider path {
+  fill: #fff; 
+}
+
+.pc-fcc-wave-divider svg {
+  height: 80px;   /* 小さく */
+  height: 160px;  /* 大きく */
 }
 
 
@@ -1747,6 +1814,33 @@ body {
   .pc-fcc-3box {
     display: none !important;
   }
+}
+
+/* ===== セクション区切り：波 ===== */
+.pc-section-wave {
+  width: 100%;
+  line-height: 0;
+  background: #f5ecf4;      /* ← 下セクションと同じ色 */
+  position: relative;
+  z-index: 1;
+}
+
+.pc-section-wave svg {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.pc-section-wave path {
+  fill: #ffffff;            /* ← 上セクションの色 */
+}
+
+.pc-character-wataame-section-wrapper {
+  padding-bottom: 40px;   /* ← 波があるので控えめに */
+}
+
+.pc-three-reasons-wrapper {
+  padding-top: 120px;     /* ← 波と重ならない */
 }
 
 
